@@ -8,7 +8,6 @@ __maintainer__  = "Jesse Hamilton"
 
 import requests
 import json
-import jsonschema
 import os
 import sys
 import logging
