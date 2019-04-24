@@ -14,7 +14,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Envrionment variables imported and env variables but derived from either configmap or secret
+# Config imported as env variables but derived from either a configmap or secret
 url=(os.environ.get('url'))
 login=(os.environ.get('username'))
 password=(os.environ.get('password'))
@@ -31,12 +31,13 @@ if request.status_code == 200:
     #payload = payload.replace('string', 'String')
     output=json.loads(payload)
 else:
-    # Log what HTTP error so its viewable from Kubernetes logs
+    # Log any HTTP error so its viewable from Kubernetes logs
     logger.error(request.status_code) 
     sys.exit(1)
 
-#Write the content out to text file for the init-container to utilize
+# Write the content out to text file for the init-container to utilize
 with open(json.outfile, 'w') as outfile:
     json.dump(output, outfile, sort_keys=True, indent=4)
 
+# Send a message to console signaling success
 logger.info('File successfully created')
