@@ -1,4 +1,4 @@
-# init-container-rest
+# init-container-template
 Template for calling RESTful API from a Kubernetes init-container.
 
 # Motivation
