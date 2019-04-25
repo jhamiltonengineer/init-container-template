@@ -56,7 +56,7 @@ def payload_edit():
   payload = payload.replace('example', 'Example')
 
 # Perform some pre-flight checks
-# Specifically, lets make sure we have the right arguement syntax and output the help file if needed.
+# Specifically, lets make sure we have the right argument syntax and output the help file if needed.
 if len(sys.argv) == 1 or len(sys.argv) == 2:
     parser.print_help()
     sys.exit(1)
