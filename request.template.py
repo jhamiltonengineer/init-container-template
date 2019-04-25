@@ -26,7 +26,7 @@ parser.add_argument('-a,', action="store", dest='--auth', help='Token or Basic')
 url = (os.environ.get('url'))
 json.outfile = (os.environ.get('outfile'))
 
-# Define our functions and set the variables to global som they can be called in the main logic.
+# Define our functions and set the variables to global so they can be called in the main logic.
 def token_auth():
   global token
   global header
@@ -94,7 +94,7 @@ def main():
       # Send a message to console signaling success
       logger.info(' SUCCESS: File created successfully.')
   else:
-      logger.info(' FAILED: File failed to create.')
+      logger.error(' FAILED: File failed to create.')
       sys.exit(4)
 
 if __name__== "__main__":

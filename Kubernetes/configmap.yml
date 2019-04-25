@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap 
+metadata:
+  name: init-container-configmap
+data:
+  url: https://jsonplaceholder.typicode.com/todos/1
+  outfile: /tmp/outfile.json

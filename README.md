@@ -2,13 +2,15 @@
 Template for calling RESTful API from a Kubernetes init-container.
 
 # Motivation
-We want to keep the primary long-running pods as lean as possible and the attack surface to a minimum. However, there are times that on pod startup, we need to get various objects from
-a RESTful service for proper intialization. This is a template for utilizing an init-container to defer all the needed packages and commands away from the primary pod.
+The goal is to always keep the primary application pods lean and the attack surface to a minimum. However, there are times that on pod startup, we need to get various objects from
+A RESTful service for proper pod initialization. Enter init-containers which are used to run code or tooling that we otherwise do not want in the main pod.  Here is a template for utilizing an init-container to defer all the required packages and commands for requesting data from a RESTful service away from the primary pod.
 
 # Instructions
 1) Edit the secret.yml to include your base64 encoded values for the following keys. (echo -n 'something' | base64)
-   * url
    * username
    * password
+2) Create a configmap to contain the following values if you do not wish to store them in a secret.
+   * url
    * outfile
-2) Apply the secret (kubectl apply -f secret.yml -n somenamespace)
+3) Apply the secret and or configmap. (kubectl apply -f secret.yml -n namespace)
+4) Adjust the deployment manifest to include an init-container spec.
