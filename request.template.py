@@ -77,7 +77,7 @@ def main():
   # Ensure that the url is responding to requests and returning a successful 200.
   if request.status_code == 200:
       logger.info(' CONNECTED: RESTful service is up: Status 200')
-      # The url is responding so go ahead and load up the content. 
+      # The url is responding so go ahead and load up the json payload. 
       payload = request.content
       #payload_edit() #Uncomment if we need to maniuplate the JSON payload in anyway
       output = json.loads(payload)
