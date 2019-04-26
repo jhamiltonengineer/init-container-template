@@ -1,6 +1,6 @@
 #!/usr/local/bin/python
 
-"""request.template.py: called from a Kubernetes init-container to get objects from RESTful service."""
+"""API-requests.py: called from a Kubernetes init-container to get objects from RESTful service."""
 
 __author__      = "Jesse Hamilton"
 __version__     = "1.0.0"
