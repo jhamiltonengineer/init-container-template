@@ -19,6 +19,7 @@ A RESTful service for proper pod initialization. Enter init-containers which are
 - [x] Create python template script 
 - [x] Add functionality allowing to pass different auth methods to python script
 - [x] Add logging and error checking to python script
+- [ ] Include sub funtions for post, delete, and patch to python script
 - [ ] Add Detailed instructions to README for executing container from docker command line
 - [ ] Create deployment manifest that includes mounting output file to main pod from init-container
 - [ ] Add Helm charts
