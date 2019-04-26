@@ -12,4 +12,4 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-CMD ["request.template.py"]
+CMD ["API-requests.py"]
